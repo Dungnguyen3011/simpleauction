@@ -9,22 +9,29 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Table(name = "tbl_transaction")
+@Table(name = "tbl_user")
 @Entity
+@Data
 @NoArgsConstructor
-public class Transaction {
+public class User {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="transaction_id", nullable = false, updatable = false)
-	private Integer transactionID;
+	@Column(name="user_id", nullable = false, updatable = false)
+	private Integer userId;
 	
-	@Column(name="transaction_price")
-	private Float transactionPrice;
+	@Column(name="email")
+	private String email;
 	
+	@Column(name="password")
+	private String password;
 	
-	private String itemId;
+	@Column(name="phone_number")
+	private Integer phoneNumber;
 	
+	@Column(name="address")
+	private String address;
 	
-	private String userId;
+	@Column(name="role")
+	private Boolean role;	
 }
