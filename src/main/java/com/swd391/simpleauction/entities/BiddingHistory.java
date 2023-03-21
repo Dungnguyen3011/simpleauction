@@ -8,10 +8,10 @@ public class BiddingHistory {
 	@Column(name="bidding_id", nullable = false, updatable = false)
 	private Integer biddingId;
 	
-	
+	@Column(name="transaction_id")
 	private Integer transactionId;
 	
+	@Column(name="final_price")
 	private Float finalPrice;
-	
-	
+		
 }
