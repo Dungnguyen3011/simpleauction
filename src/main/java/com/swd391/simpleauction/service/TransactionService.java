@@ -9,4 +9,6 @@ public interface TransactionService {
 	public List<TransactionDTO> listAll();
 	
 	public TransactionDTO save(TransactionDTO transactiondto);
+	
+	public TransactionDTO getbyId(int id);
 }

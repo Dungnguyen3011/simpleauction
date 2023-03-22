@@ -39,4 +39,11 @@ public class TransactionServiceImp implements TransactionService{
 		return null;
 	}
 
+	@Override
+	public TransactionDTO getbyId(int id) {
+		Transaction transaction = rp.findById(id).get();
+		TransactionDTO trandto = TransactionMapper.toTransactionDTO(transaction);
+		return trandto;
+	}
+
 }

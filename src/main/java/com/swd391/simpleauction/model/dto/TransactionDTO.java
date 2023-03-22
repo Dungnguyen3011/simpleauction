@@ -20,6 +20,6 @@ public class TransactionDTO {
 	@NotNull
 	private Integer userId;
 	
-	@NotNull
-	private Integer biddingId;
+//	@NotNull
+//	private Integer biddingId;
 }

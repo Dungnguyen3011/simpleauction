@@ -11,7 +11,7 @@ public class TransactionMapper {
 		trandto.setTransactionPrice(transaction.getTransactionPrice());
 		trandto.setItemId(transaction.getItem().getItemId());
 		trandto.setUserId(transaction.getUser().getUserId());
-		trandto.setBiddingId(transaction.getBiddinghistory().getBiddingId());
+		//trandto.setBiddingId(transaction.getBiddinghistory().getBiddingId());
 		return trandto;
 	}
 }
