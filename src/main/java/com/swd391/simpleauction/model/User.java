@@ -1,6 +1,7 @@
 package com.swd391.simpleauction.model;
 
 public class User {
+	
 	String id;
 	String name;
 	
