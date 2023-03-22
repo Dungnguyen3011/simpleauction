@@ -1,5 +1,9 @@
 package com.swd391.simpleauction.repositories;
 
-public class TransactionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.swd391.simpleauction.entities.Transaction;
+
+public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
+	
 }
