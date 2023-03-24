@@ -1,5 +1,8 @@
 package com.swd391.simpleauction.service.imp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -9,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.swd391.simpleauction.entities.BiddingHistory;
 import com.swd391.simpleauction.entities.Transaction;
 import com.swd391.simpleauction.model.dto.BiddingHistoryDTO;
+import com.swd391.simpleauction.model.mapper.BiddingHistoryMapper;
 import com.swd391.simpleauction.repositories.BiddingHistoryRepository;
 import com.swd391.simpleauction.repositories.TransactionRepository;
 import com.swd391.simpleauction.service.BiddingHistoryService;
@@ -70,17 +74,27 @@ public class BiddingHistoryServiceImp implements BiddingHistoryService {
 		return true;
 	}
 	
-	@Scheduled(cron = "00 05 14 24 03 ?")
+	@Scheduled(cron = "00 18 23 24 03 ?")
 	public void saveSaleitem() {
-		if(!started) {
-			return;
-		}else {
 		BiddingHistoryDTO dto = new BiddingHistoryDTO();
+		dto.setTransactionId(3);
 		dto.setFinalPrice(100000f);
 		dto.setTransactionId(id);
 		BiddingHistory bh = toBiddingHistorywHighestPrice(dto);
-		rp.save(bh);
-		}
+		rp.save(bh);		
+	}
+
+	@Override
+	public List<BiddingHistoryDTO> getAll() {
+		List<BiddingHistory> result = rp.findAll();
+		List<BiddingHistoryDTO> listdto = new ArrayList<>();
+		result.forEach(v-> listdto.add(BiddingHistoryMapper.toBiddingHDTO(v)));
+		return listdto;
+	}
+
+	@Override
+	public BiddingHistoryDTO getBidById(int id) {
+		return BiddingHistoryMapper.toBiddingHDTO(rp.findById(id).get());
 	}
 
 }

@@ -3,7 +3,6 @@ package com.swd391.simpleauction.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,8 +41,8 @@ public class TransactionController {
 	}
 	
 	@PostMapping("/test")
-	public ResponseEntity<?> test(@Param("test") Integer id){
-		System.out.println(id);
-		return ResponseEntity.ok(id);
+	public ResponseEntity<?> test(@RequestBody TransactionDTO dto){
+		System.out.println(dto.getTransactionId());
+		return ResponseEntity.ok(dto);
 	}
 }

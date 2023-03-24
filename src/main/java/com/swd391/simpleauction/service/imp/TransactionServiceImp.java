@@ -33,12 +33,12 @@ public class TransactionServiceImp implements TransactionService{
 	public Transaction toTransaction(TransactionDTO dto) {
 		Transaction tran = new Transaction();
 		tran.setTransactionId(dto.getTransactionId());
-		tran.setTransactionPrice(dto.getTransactionPrice());
-		//tran.setTransactionPrice(15000000f);
-		tran.setUser(getUserById(dto.getUserId()));
-		//tran.setUser(getUserById(2));
-		tran.setItem(getItemById(dto.getItemId()));
-		//tran.setItem(getItemById(1));
+		//tran.setTransactionPrice(dto.getTransactionPrice());
+		tran.setTransactionPrice(16500000f);
+		//tran.setUser(getUserById(dto.getUserId()));
+		tran.setUser(getUserById(2));
+		//tran.setItem(getItemById(dto.getItemId()));
+		tran.setItem(getItemById(1));
 		return tran;
 		
 	}

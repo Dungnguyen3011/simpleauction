@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.swd391.simpleauction.entities.Item;
 import com.swd391.simpleauction.model.dto.ItemDTO;
@@ -11,6 +13,8 @@ import com.swd391.simpleauction.model.mapper.ItemMapper;
 import com.swd391.simpleauction.repositories.ItemRepository;
 import com.swd391.simpleauction.service.ItemService;
 
+@Service
+@Transactional
 public class ItemServiceImp implements ItemService{
 
 	@Autowired
