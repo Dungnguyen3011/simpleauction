@@ -1,17 +1,17 @@
 package com.swd391.simpleauction.model.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class BiddingHistoryDTO {
 
 	private Integer biddingId;
-	private Integer transactionId;
+	
 	private Float finalPrice;
+	
+	private Integer transactionId;
 }
