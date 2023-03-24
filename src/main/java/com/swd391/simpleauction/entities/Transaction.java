@@ -24,7 +24,7 @@ public class Transaction {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="transaction_id", nullable = false, updatable = false)
-	private Integer transactionID;
+	private Integer transactionId;
 	
 	@Column(name="transaction_price")
 	private Float transactionPrice;

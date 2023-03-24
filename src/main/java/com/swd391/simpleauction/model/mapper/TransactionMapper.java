@@ -7,7 +7,7 @@ public class TransactionMapper {
 
 	public static TransactionDTO toTransactionDTO(Transaction transaction) {
 		TransactionDTO trandto = new TransactionDTO();
-		trandto.setTransactionId(transaction.getTransactionID());
+		trandto.setTransactionId(transaction.getTransactionId());
 		trandto.setTransactionPrice(transaction.getTransactionPrice());
 		trandto.setItemId(transaction.getItem().getItemId());
 		trandto.setUserId(transaction.getUser().getUserId());

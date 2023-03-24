@@ -1,6 +1,6 @@
 package com.swd391.simpleauction.entities;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -40,7 +40,7 @@ public class Item {
 	private Float startingPrice;
 	
 	@Column(name="end_time")
-	private Date endTime;
+	private Timestamp endTime;
 	
 	@Column(name="published")
 	private Boolean published;	

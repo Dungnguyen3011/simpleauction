@@ -1,6 +1,6 @@
 package com.swd391.simpleauction.model.dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +19,7 @@ public class ItemDTO {
 	
 	private Float startingPrice;
 	
-	private Date endTime;
+	private Timestamp endTime;
 	
 	private Boolean published;
 	
